@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/public.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+ 	<%- include("./header.ejs",{title:"员工后台管理系统",isShow:true,name:name})%>
+ 	<div id="main">
+ 		<%- include("./left-menu")%>
+        <table class="table table-bordered table-striped pull-right" id="table">
+              <thead>
+                <tr>
+                  <th>姓&nbsp;&nbsp;名</th>
+                     <th>生日&nbsp;&nbsp;名</th>
+                     <th>年&nbsp;&nbsp;龄</th>
+                     <th>手机号码</th>
+                  <th>所属部门</th>
+                  <th>操&nbsp;&nbsp;作</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <%for(var i=0;i<list.length;i++){%>
+                        <tr>
+                            <td><a href="/detail?id=<%= list[i]._id%>"><%= list[i].staffname%></a></td>
+                               <td><%= list[i].birthdata%></td>
+                               <td><%= list[i].age%></td>
+                               <td><%= list[i].phonenum%></td>
+                               <td><%= list[i].bumen%></td>
+                            <td>
+                            <a class="btn btn-default" href="/staff/fixed?id=<%= list[i]._id%>" role="button">修改</a>
+                            <a class="btn btn-danger" href="/staff/delete?id=<%= list[i]._id%>" role="button">删除</a>
+                            </td> 
+                        </tr>
+                    <%}%>
+              </tbody>
+        </table>    
+    </div>
+  </body>
+</html>

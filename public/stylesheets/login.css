@@ -1,0 +1,9 @@
+.container{
+	background: url('../images/bg-1.jpg') no-repeat center;width:800px;height: 420px;border:2px solid #000;
+	background-size: cover;position: relative;
+}
+.login-form{
+	max-width: 350px;max-height: 380px;
+	position: absolute;top:16%;bottom: 0;left:34%;right: 0;margin: auto;
+
+}

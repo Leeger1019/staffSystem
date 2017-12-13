@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+//nav的样式
+.navbar-default{
+    min-height: 80px;
+    background-color: #ffd777;
+    border-bottom: 1px solid #c9aa5f;
+}
+.container-fluid{
+	 background-color: #ffd777;
+}
+.navbar-default .navbar-brand{
+	font-size: 26px;
+}
+.navbar-default .navbar-nav li a {
+    color: #fff;font-size: 18px;
+}
+.navbar-default .navbar-nav .te a{
+    color: red;
+}
+//主体部分样式
+#main{
+	position: relative;
+}
+//左边的菜单导航栏
+#accordion{
+	float: left;
+	max-width: 300px;
+}
+

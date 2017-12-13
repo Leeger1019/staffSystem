@@ -1,0 +1,15 @@
+//主体部分样式 
+#main{
+	position: relative;
+}
+#accordion{
+	float: left;
+	min-width: 200px;
+}
+#table{
+	float:right;
+	max-width: 1080px;text-align: center;
+}
+th{
+	text-align: center;
+}

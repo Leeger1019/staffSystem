@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>全体员工名单</title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/public.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <style>
+      
+
+      #list li{
+        list-style: none;
+      }
+
+      #list li img{
+        width: 64px;
+      }
+      #pagination{
+      	position: fixed;bottom: 10%;left:48%;min-width: 10%;
+      }
+      h4{
+        display: inline-block;text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+ 	<nav class="navbar navbar-default">
+ 	  <div class="container-fluid">
+ 	    <!-- Brand and toggle get grouped for better mobile display -->
+ 	    <div class="navbar-header">
+ 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ 	        <span class="sr-only">Toggle navigation</span>
+ 	        <span class="icon-bar"></span>
+ 	        <span class="icon-bar"></span>
+ 	        <span class="icon-bar"></span>
+ 	      </button>
+ 	      <a class="navbar-brand" href="/">员工后台管理系统</a>
+ 	    </div>
+ 	  </div>
+ 	</nav>
+ 	<div id="main">
+ 		
+ 		<table class="table table-bordered table-striped pull-right" id="table">
+ 			<h4>当前位置&gt;全部员工名单</h4>
+ 		      <thead>
+ 		        <tr>
+ 		          <th>姓&nbsp;&nbsp;名</th>
+ 		             <th>生日&nbsp;&nbsp;名</th>
+ 		             <th>年&nbsp;&nbsp;龄</th>
+ 		             <th>手机号码</th>
+ 		          <th>所属部门</th>
+ 		        </tr>
+ 		      </thead>
+ 		      <tbody id="list">
+ 		            
+ 		      </tbody>
+ 		</table>   
+    </div>
+    <nav aria-label="Page navigation" style="text-align:center" id="pagination">
+      <ul class="pagination" >
+      </ul>
+    </nav> 
+  </body>
+</html>

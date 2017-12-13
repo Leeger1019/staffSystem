@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/public.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+ 	<%- include("./header.ejs",{title:"员工信息",isShow:false})%>
+ 	<div class="container">
+ 		<%if(isNew){%>
+	        <form method="post" action="/staff" enctype="multipart/form-data">
+	        	<div class="form-group row">
+	        	    <label for="user">姓名</label>
+	        	    <input type="text" class="form-control" id="user" name="staffname" placeholder="请输入姓名">
+	        	</div>
+	        	<div class="form-group row">
+	        	    <label for="phonenum">手机号码</label><span>*</span>
+	        	    <input type="text" class="form-control" name="phonenum" placeholder="请输入手机号码">
+	        	</div>
+	        	<div class="form-group row">
+	        	    <label for="user">生日</label><span>*</span>
+	        	    <input type="text" class="form-control" name="birthdata" placeholder="请输入生日">
+	        	</div>
+	        	<div class="form-group row">
+	        	    <label for="age">年龄</label><span>*</span>
+	        	    <input type="text" class="form-control" name="age" placeholder="请输入年龄">
+	        	</div>
+	        	<div class="form-group row">
+	        	    <label for="bumen">部门</label><span>*</span>
+	        	    <input type="text" class="form-control" name="bumen" placeholder="请输入部门">
+	        	</div>
+	        	<div class="form-group row">
+	        	    <label for="user">用工方式</label><span>*</span>
+	        	    <input type="text" class="form-control" name="fangshi" placeholder="请输入单位的用工方式">
+	        	</div>
+                <div class="form-group row">
+                    <label for="jobtitle">职位</label>
+                    <input type="text" class="form-control" name="jobTitle" placeholder="请输入职位">
+                </div>
+                <div class="form-group row">
+                    <label for="money">薪水</label>
+                    <input type="text" class="form-control" name="salary" placeholder="请输入薪水">
+                </div>
+                <div class="form-group">
+                    <label for="photo">员工照片</label>
+                    <input type="file" name="staffphoto">
+                </div>
+                <%if(isAppear){%>
+                    <div class="form-group">
+                        <label for="Address">该员工手机号已被注册</label>
+                    </div>
+                    <%}%>
+	        	<button type="submit" class="btn btn-default">确定</button>
+	        </form>
+        <%} else {%>
+        	<form method="post" action="/staff/fixed" enctype="multipart/form-data">
+        		<div class="form-group row">
+        		    <label for="user">姓名</label>
+        		    <input type="text" class="form-control" id="user" name="staffname" placeholder="请输入姓名" value="<%= info.staffname%>">
+        		</div>
+        		<div class="form-group row">
+        		    <label for="phonenum">手机号码</label><span>*</span>
+        		    <input type="text" class="form-control" name="phonenum" placeholder="请输入手机号码" value="<%= info.phonenum%>">
+        		</div>
+        		<div class="form-group row">
+        		    <label for="user">生日</label><span>*</span>
+        		    <input type="text" class="form-control" name="birthdata" placeholder="请输入生日" value="<%= info.birthdata%>">
+        		</div>
+        		<div class="form-group row">
+        		    <label for="age">年龄</label><span>*</span>
+        		    <input type="text" class="form-control" name="age" placeholder="请输入年龄" value="<%= info.age%>">
+        		</div>
+        		<div class="form-group row">
+        		    <label for="bumen">部门</label><span>*</span>
+        		    <input type="text" class="form-control" name="bumen" placeholder="请输入部门" value="<%= info.bumen%>">
+        		</div>
+        		<div class="form-group row">
+        		    <label for="fangshi">用工方式</label><span>*</span>
+        		    <input type="text" class="form-control" name="fangshi" placeholder="请输入单位的用工方式" value="<%= info.fangshi%>">
+        		</div>
+                <div class="form-group row">
+                    <label for="jobtitle">职位</label>
+                    <input type="text" class="form-control" name="jobTitle" placeholder="请输入职位" value="<%= info.jobTitle%>">
+                </div>
+                <div class="form-group row">
+                    <label for="money">薪水</label>
+                    <input type="text" class="form-control" name="salary" placeholder="请输入薪水" value="<%= info.salary%>">
+                </div>
+                <div class="form-group">
+                    <label for="photo">员工照片</label>
+                    <input type="file" name="staffphoto">
+                </div>
+                <input type="hidden" value="<%= info._id%>" name="id"/>
+        		<button type="submit" class="btn btn-default">修改</button>
+        	</form>
+        <%}%>
+    </div>
+  </body>
+</html>
