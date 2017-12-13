@@ -23,6 +23,6 @@ var obj = {
 }
 
 var model = mongoose.model("staff",new Schema(obj));
-//model 这个对象，映射的是articles  这张表
+//model 这个对象，映射的是staff  这张表
 
 module.exports = model;
